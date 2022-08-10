@@ -5,13 +5,10 @@ def safeExtGet(prop, fallback) {
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        maven{url 'https://maven.aliyun.com/repository/google'}
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.android.tools.build:gradle:4.2.2'
     }
 }
 
@@ -22,7 +19,7 @@ android {
     buildToolsVersion safeExtGet('buildToolsVersion', '27.0.3')
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 18
         targetSdkVersion safeExtGet('targetSdkVersion', 27)
     }
     lintOptions {
@@ -37,10 +34,7 @@ repositories {
         // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
         url "$projectDir/../../../node_modules/react-native/android"
     }
-    maven {
-        url 'https://maven.google.com/'
-        name 'Google'
-    }
+    maven{url 'https://maven.aliyun.com/repository/google'}
     maven { url "https://jitpack.io" }
 }
 
